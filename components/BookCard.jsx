@@ -10,13 +10,16 @@ const BookCard = ({ info }) => {
   };
 
   return (
-    <div className="w-80 h-50 rounded-xl overflow-hidden bg-white m-2">
+    <div
+      className="h-50 rounded-xl overflow-hidden bg-white m-2"
+      style={{ width: "280px" }}
+    >
       <Image
-        style={{ maxHeight: "200px", objectFit: "cover" }}
+        style={{ minHeight: "250px", maxHeight: "250px", objectFit: "cover" }}
         src={info.image}
         alt="Book Cover"
         layout="responsive"
-        width={200}
+        width={100}
         height={100}
       />
       <div className="mt-2 p-4 pb-0 flex justify-between items-start">
@@ -32,15 +35,15 @@ const BookCard = ({ info }) => {
           <p className="text-2xl font-bold">{info.price}</p>
         </div>
       </div>
-
-      <Button
-        color="blue"
-        onClick={handleBookClick}
-        size="large"
-        text="Info"
-        theme="colored"
-        style={{ margin: "1rem" }}
-      />
+      <div>
+        <Button
+          onClick={handleBookClick}
+          size="regular"
+          text="INFO"
+          style={{ margin: "1rem" }}
+          theme="outline"
+        />
+      </div>
     </div>
   );
 };
