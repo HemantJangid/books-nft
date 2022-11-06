@@ -29,3 +29,43 @@ a {
     background: black;
   }
 }
+
+#__next
+  > div.container.m-auto.mt-12.px-4.py-2.flex.flex-col.w-full
+  > div
+  > div
+  > div
+  > div
+  > div
+  > button
+  > span,
+#__next
+  > div.container.mx-auto.px-4.mt-10
+  > div.mt-16.flex.flex-wrap.justify-start.w-full
+  > div
+  > div
+  > div
+  > div
+  > button
+  > span,
+#__next
+  > div.container.mx-auto.px-4.mt-10
+  > div.mt-16.flex.flex-wrap.justify-start.w-full
+  > div
+  > div
+  > div
+  > div
+  > button
+  > span,
+#__next
+  > div.container.mx-auto.px-4.mt-10
+  > div.mt-16.flex.flex-wrap.justify-start.w-full
+  > div
+  > div
+  > div
+  > div
+  > div
+  > button
+  > span {
+  z-index: 0;
+}

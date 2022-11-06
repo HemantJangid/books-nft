@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { BookCard, Footer, Header, NavBar } from "../components";
+import { Footer, Header, NavBar } from "../components";
+import SecHandBookCard from "../components/seHandBookCard";
 import { BOOKS } from "../constants";
 import { filterBooks, getContract } from "../utils";
 import {
@@ -11,13 +12,13 @@ import {
 } from "../utils/storageProvider";
 import { useAppContext } from "./_app";
 
-const Index = () => {
+const SecHandStore = () => {
   const web3ModalRef = useRef();
   const [walletConnected, setWalletConnected] = useState(false);
   // const [chainId, setChainId] = useState();
   const [loggedIn, setLoggedIn] = useState(false);
   const router = useRouter();
-  const [books, setBooks] = useState(BOOKS);
+  const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState(BOOKS);
   const auth = getAuthInstance();
   const { chainId, setChainId } = useAppContext();
@@ -43,9 +44,27 @@ const Index = () => {
       const provider = await getArcanaProviderOrSigner();
       const contract = getContract(provider);
 
+      const nfts = await contract.getAllSecondHandBooks();
       const books = await contract.getAllBooks();
-      setBooks(books);
-      setFilteredBooks(books);
+      const finalNfts = [];
+      for (const nft of nfts) {
+        const temp = {};
+        Object.keys(nft).forEach((key) => {
+          temp[key] = nft[key];
+        });
+
+        const book = books.find(
+          (book) => book.bookId.toString() === nft.bookId.toString()
+        );
+        if (book) {
+          temp.uri = book.uri;
+          temp.book_name = book.book_name;
+        }
+        finalNfts.push(temp);
+      }
+      console.log(finalNfts);
+      setBooks(finalNfts);
+      setFilteredBooks(finalNfts);
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +91,7 @@ const Index = () => {
               {filteredBooks?.map((book, i) => {
                 // console.log(book);
                 return (
-                  <BookCard
+                  <SecHandBookCard
                     info={book}
                     key={i}
                     onclick={() => {
@@ -100,4 +119,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SecHandStore;

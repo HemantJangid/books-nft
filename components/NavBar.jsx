@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Avatar, Button } from "web3uikit";
+import { loginViaGoogle } from "../utils/storageProvider";
 
-const NavBar = () => {
+const NavBar = ({ loggedIn }) => {
   const router = useRouter();
   const [walletConnected, setWalletConnected] = useState(false);
   const [address, setAddress] = useState(
@@ -12,26 +13,26 @@ const NavBar = () => {
     router.push(`/profile`);
   };
   return (
-    <div className="w-full h-20 flex flex-row justify-between p-2 bg-white align-middle">
+    <div className="w-full h-20 flex flex-row justify-between p-2 bg-white align-middle shadow-sm">
       <div className="container m-auto px-4 py-2 flex justify-between items-center">
         <span className="text-2xl font-bold"></span>
-        {!walletConnected ? (
+        {!loggedIn ? (
           <Button
-            onClick={() => setWalletConnected(true)}
+            onClick={loginViaGoogle}
             size="large"
-            text="Connect"
+            text="Login via Google"
             theme="outline"
           />
         ) : (
           <div className="flex flex-row items-center">
-            <p className="text-2xl font-bold">{`${address.slice(
+            {/* <p className="text-2xl font-bold">{`${address.slice(
               0,
               6
-            )}......${address.slice(-6)}`}</p>
+            )}......${address.slice(-4)}`}</p> */}
             <Avatar
               isRounded
               theme="image"
-              className="ml-6"
+              className="ml-6 cursor-pointer"
               size={48}
               onClick={handleProfileClick}
             />
