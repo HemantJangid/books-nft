@@ -132,7 +132,7 @@ export const FILTERS = [
   },
 ];
 
-export const CONTRACT_ADDRESS = "0xD394e44DC42F47A5EE11B87aFda4d77D84bedf51";
+export const CONTRACT_ADDRESS = "0x191f3A06032B86fA1Ffa73A0488A442aCca27845";
 export const CONTRACT_ABI = [
   {
     inputs: [],
@@ -162,11 +162,6 @@ export const CONTRACT_ABI = [
   {
     inputs: [],
     name: "Not_The_Owner",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "Transfer_To_Author_Failed",
     type: "error",
   },
   {
@@ -362,21 +357,6 @@ export const CONTRACT_ABI = [
             type: "uint8",
           },
           {
-            internalType: "string",
-            name: "book_name",
-            type: "string",
-          },
-          {
-            internalType: "address",
-            name: "authorAddress",
-            type: "address",
-          },
-          {
-            internalType: "string",
-            name: "authorName",
-            type: "string",
-          },
-          {
             internalType: "uint32",
             name: "physical_price",
             type: "uint32",
@@ -395,6 +375,21 @@ export const CONTRACT_ABI = [
             internalType: "uint16",
             name: "authorPercentage",
             type: "uint16",
+          },
+          {
+            internalType: "string",
+            name: "book_name",
+            type: "string",
+          },
+          {
+            internalType: "address",
+            name: "authorAddress",
+            type: "address",
+          },
+          {
+            internalType: "string",
+            name: "authorName",
+            type: "string",
           },
           {
             internalType: "string",
@@ -438,9 +433,14 @@ export const CONTRACT_ABI = [
             type: "uint256",
           },
           {
-            internalType: "string",
-            name: "QRCode",
-            type: "string",
+            internalType: "uint256",
+            name: "timestamp",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "expiryTimestamp",
+            type: "uint256",
           },
           {
             internalType: "uint8",
@@ -451,21 +451,6 @@ export const CONTRACT_ABI = [
             internalType: "uint32",
             name: "deliveryCharge",
             type: "uint32",
-          },
-          {
-            internalType: "string",
-            name: "deliveryAddress",
-            type: "string",
-          },
-          {
-            internalType: "uint256",
-            name: "timestamp",
-            type: "uint256",
-          },
-          {
-            internalType: "bool",
-            name: "openForSale",
-            type: "bool",
           },
           {
             internalType: "uint32",
@@ -483,9 +468,14 @@ export const CONTRACT_ABI = [
             type: "uint8",
           },
           {
-            internalType: "uint256",
-            name: "expiryTimestamp",
-            type: "uint256",
+            internalType: "bool",
+            name: "openForSale",
+            type: "bool",
+          },
+          {
+            internalType: "string",
+            name: "QRCode",
+            type: "string",
           },
         ],
         internalType: "struct NFTBookStore.NFTBook[]",
@@ -513,9 +503,14 @@ export const CONTRACT_ABI = [
             type: "uint256",
           },
           {
-            internalType: "string",
-            name: "QRCode",
-            type: "string",
+            internalType: "uint256",
+            name: "timestamp",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "expiryTimestamp",
+            type: "uint256",
           },
           {
             internalType: "uint8",
@@ -526,21 +521,6 @@ export const CONTRACT_ABI = [
             internalType: "uint32",
             name: "deliveryCharge",
             type: "uint32",
-          },
-          {
-            internalType: "string",
-            name: "deliveryAddress",
-            type: "string",
-          },
-          {
-            internalType: "uint256",
-            name: "timestamp",
-            type: "uint256",
-          },
-          {
-            internalType: "bool",
-            name: "openForSale",
-            type: "bool",
           },
           {
             internalType: "uint32",
@@ -558,9 +538,14 @@ export const CONTRACT_ABI = [
             type: "uint8",
           },
           {
-            internalType: "uint256",
-            name: "expiryTimestamp",
-            type: "uint256",
+            internalType: "bool",
+            name: "openForSale",
+            type: "bool",
+          },
+          {
+            internalType: "string",
+            name: "QRCode",
+            type: "string",
           },
         ],
         internalType: "struct NFTBookStore.NFTBook[]",
@@ -613,21 +598,6 @@ export const CONTRACT_ABI = [
             type: "uint8",
           },
           {
-            internalType: "string",
-            name: "book_name",
-            type: "string",
-          },
-          {
-            internalType: "address",
-            name: "authorAddress",
-            type: "address",
-          },
-          {
-            internalType: "string",
-            name: "authorName",
-            type: "string",
-          },
-          {
             internalType: "uint32",
             name: "physical_price",
             type: "uint32",
@@ -646,6 +616,21 @@ export const CONTRACT_ABI = [
             internalType: "uint16",
             name: "authorPercentage",
             type: "uint16",
+          },
+          {
+            internalType: "string",
+            name: "book_name",
+            type: "string",
+          },
+          {
+            internalType: "address",
+            name: "authorAddress",
+            type: "address",
+          },
+          {
+            internalType: "string",
+            name: "authorName",
+            type: "string",
           },
           {
             internalType: "string",
